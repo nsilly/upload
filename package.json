@@ -1,0 +1,47 @@
+{
+  "name": "@vicoders/importer",
+  "version": "1.0.4",
+  "description": "Vicoders CLI Utils",
+  "scripts": {
+    "son": "node ./src/app/index",
+    "test": "./node_modules/.bin/jest --forceExit --detectOpenHandles",
+    "build": "./node_modules/.bin/rimraf dist && ./node_modules/.bin/babel src --out-dir dist/ --ignore \"node_modules\" --copy-files",
+    "publish_module": "npm run build && npx @codersvn/npm-auto-version && npm publish --access public && rm -rf dist",
+    "publish_module_only": "npm run build && npm publish --access public && rm -rf dist"
+  },
+  "main": "dist/app/index.js",
+  "keywords": [
+    "Nodejs",
+    "Library",
+    "Package"
+  ],
+  "author": "Hieupv",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.2.0",
+    "@nsilly/container": "*",
+    "@nsilly/exceptions": "^3.0.3",
+    "lodash": "^4.17.11",
+    "xlsx": "^0.14.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^22.1.0",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.0.0",
+    "rimraf": "^2.6.2"
+  }
+}
