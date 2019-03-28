@@ -15,6 +15,15 @@ class FakeRepo {
     console.log('Record is created');
   }
 }
+class First {
+  async first() {
+    return {
+      id: 1,
+      name: 'son'
+    };
+    // return data;
+  }
+}
 
 describe('Import', () => {
   it('can import data', async () => {
@@ -25,7 +34,7 @@ describe('Import', () => {
         },
         action: {
           handler: 'FIRST',
-          repository: FakeRepo,
+          repository: First,
           where: {
             id: 1
           }
@@ -34,11 +43,12 @@ describe('Import', () => {
           return _.assign(row, { id: data.id });
         },
         after: row => {
-          return _.assign(row, { qu_id: 'jsdj' });
+          return _.assign(row, { after: 'after' });
         }
       },
       {
         before: row => {
+          console.log(row);
           return _.assign(row, { before: 'before' });
         },
         action: {

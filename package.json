@@ -1,6 +1,6 @@
 {
   "name": "@vicoders/importer",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Vicoders CLI Utils",
   "scripts": {
     "son": "node ./src/app/index",
