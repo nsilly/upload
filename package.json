@@ -1,6 +1,6 @@
 {
-  "name": "@vicoders/importer",
-  "version": "1.0.6",
+  "name": "@vicoders/nodejs-uploadfile",
+  "version": "1.0.1",
   "description": "Vicoders CLI Utils",
   "scripts": {
     "son": "node ./src/app/index",
@@ -15,14 +15,16 @@
     "Library",
     "Package"
   ],
-  "author": "Hieupv",
+  "author": "BaoTrung",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.2.0",
     "@nsilly/container": "*",
     "@nsilly/exceptions": "^3.0.3",
     "lodash": "^4.17.11",
-    "xlsx": "^0.14.1"
+    "multer": "^1.3.0",
+    "multer-s3": "^2.7.0",
+    "aws-sdk": "^2.303.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
