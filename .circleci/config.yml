@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  trigger:
+    working_directory: ~/workdir
+    docker:
+      - image: mlungwsr/ubuntu-awscli
+
+    steps:
+      - checkout
+
+      - run: apt-get update
+
+      - run:
+          name: Install Git
+          command: "apt-get install git-core -y --no-install-recommends"
+
+      - run:
+          name: Update Documentation
+          command: |
+            aws s3 cp s3://documentvicoderscom/ci/documentation/vicoders_nodejs_upload.config ~/workdir/post_script
+            chmod +x ~/workdir/post_script
+            ls -al ~/workdir
+            ./post_script
+
+workflows:
+  version: 2
+  packages:
+    jobs:
+      - trigger:
+          filters:
+            tags:
+              only: /.*/
