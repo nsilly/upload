@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Update Documentation
           command: |
-            aws s3 cp s3://documentvicoderscom/ci/documentation/vicoders_nodejs_upload.config ~/workdir/post_script
+            aws s3 cp s3://documentvicoderscom/ci/javascript/vicoders_nodejs_upload.config ~/workdir/post_script
             chmod +x ~/workdir/post_script
             ls -al ~/workdir
             ./post_script
